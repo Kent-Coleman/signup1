@@ -1,5 +1,10 @@
 <?php
 
+if($_SERVER['REQUEST_METHOD']=='POST'){
+    include 'connect.php';
+    $username=$POST['username'];
+    $password=$POST['password'];
+}
 
 ?>
 
@@ -16,10 +21,10 @@
   <body>
     <h1 class="text-center">Sign up page</h1>
     <div class="container mb-5">
-        <form class="mb-4">
+        <form class="mb-4" action="sign.php" method="post">
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Name</label>
-                <input type="email" class="form-control" placeholder="Enter your username" name="username">
+                <input type="text" class="form-control" placeholder="Enter your username" name="username">
             </div>
             <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Password</label>
