@@ -4,6 +4,12 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
     include 'connect.php';
     $username=$POST['username'];
     $password=$POST['password'];
+
+    $sql="insert into 'registration'(username,password)
+    values('$username','$password')";
+    $result=mysqli_query($con,$sql);
+
+    
 }
 
 ?>
