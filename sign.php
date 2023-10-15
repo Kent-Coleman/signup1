@@ -1,3 +1,10 @@
+<?php
+
+
+?>
+
+
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -8,8 +15,8 @@
   </head>
   <body>
     <h1 class="text-center">Sign up page</h1>
-    <div class="contianer-fluid mt-5">
-        <form>
+    <div class="container mb-5">
+        <form class="mb-4">
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Name</label>
                 <input type="email" class="form-control" placeholder="Enter your username" name="username">
