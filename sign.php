@@ -5,13 +5,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    $sql = "INSERT INTO registration (username, password) VALUES ('$username', '$password')";
-    $result = mysqli_query($con, $sql);
+    $sql="SELECT * FROM `registration` WHERE username='$username'";
 
-    if ($result) {
-        echo 'Data inserted successfully';
-    } else {
-        die(mysqli_error($con));
+    $result=mysqli_query($con,$sql);
+    if($result){
+        $num=mysqli_num_rows($result);
+        if($num>0){
+            echo "User already exist";
+        }else{
+            $sql = "INSERT INTO registration (username, password) VALUES ('$username', '$password')";
+            $result = mysqli_query($con, $sql);
+                if ($result) {
+                        echo 'Signup successful';
+                    } else {
+                        die(mysqli_error($con));
+                    }
+        }
     }
 }
 
