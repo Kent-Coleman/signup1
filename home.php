@@ -18,7 +18,7 @@ if(!isset($_SESSION['username'])){
         <?php echo $_SESSION['username'];?>
     </h1>
 
-    <div class="contianer">
+    <div class="contianer text-center">
         <a href="logout.php" class="btn btn-primary mt-5">Logout</a>
     </div>
 
