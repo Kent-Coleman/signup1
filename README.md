@@ -5,7 +5,7 @@ Locally Hosted Signup, Login, and Logout System in PHP and MySQL using Bootstrap
 
 To run the application locally, download and open XAMPP, then start the MySQL and Apache Servers. 
 Open a web browser and navigate to localhost/phpmyadmin/.
-A SQL database needs to be created. Select 'New' in the left navigation bar, enter the name signupforms, then enter the database name 'registrations' and select 3 columns.
+A SQL database needs to be created. Select 'New' in the left navigation bar, enter the name 'signupforms', then enter the database name 'registrations' and select 3 columns.
 The first column is 'id' for a primary key with type INT, index type 'primary', and the auto increment checkbox selected.
 Second column is 'password' with type 'VARCHAR', and length of 100.
 Third column is 'username' with type 'VARCHAR', length of 100, and an index type of 'UNIQUE' to prevent duplicate usernames.
