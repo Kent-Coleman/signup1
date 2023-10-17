@@ -14,12 +14,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $num=mysqli_num_rows($result);
         if($num>0){
             $login=1;
+            session_start();
+            $_SESSION['username']=$username;
+            header('location:home.php');
+
         }else{
             $invalid=1;
         }
     }
 }
-
 ?>
 
 
@@ -40,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
             <strong>Success </strong> Logged in successfully.
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-          </div>';
+            </div>';
         }
     ?>
 
@@ -50,7 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
             <strong>Error </strong> Invalid credentials.
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-          </div>';
+            </div>';
         }
     ?>
 

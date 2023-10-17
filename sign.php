@@ -27,7 +27,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     }
 }
-
 ?>
 
 
@@ -48,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
             <strong>Success </strong> You are successfully signed up.
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-          </div>';
+            </div>';
         }
     ?>
 
@@ -58,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
             <strong>Holy guacamole!</strong> User already exists.
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-          </div>';
+            </div>';
         }
     ?>
 
