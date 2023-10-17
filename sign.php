@@ -42,6 +42,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   </head>
   <body>
 
+    <!-- Error Message -->
+    <?php
+        if($success){
+            echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Success </strong> You are successfully signed up.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>';
+        }
+    ?>
+
+    <!-- Success Message -->
     <?php
         if($user){
             echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
