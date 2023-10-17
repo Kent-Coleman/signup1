@@ -1,2 +1,2 @@
 # signup1
-Signup System in PHP and MySQL using Bootstrap and XAMPP
+Signup, Login, and Logout System in PHP and MySQL using Bootstrap and XAMPP
