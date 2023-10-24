@@ -1,25 +1,24 @@
 <?php
-$login=0;
-$invalid=0;
+$login = 0;
+$invalid = 0;
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     include 'connect.php';
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    $sql="SELECT * FROM `registration` WHERE username='$username' and password='$password'";
+    $sql = "SELECT * FROM `registration` WHERE username = '$username' and password = '$password'";
 
-    $result=mysqli_query($con,$sql);
-    if($result){
-        $num=mysqli_num_rows($result);
-        if($num>0){
-            $login=1;
+    $result = mysqli_query($con, $sql);
+    if($result) {
+        $num = mysqli_num_rows($result);
+        if($num > 0) {
+            $login = 1;
             session_start();
-            $_SESSION['username']=$username;
-            header('location:home.php');
-
-        }else{
-            $invalid=1;
+            $_SESSION['username'] = $username;
+            header('location: home.php');
+        }else {
+            $invalid = 1;
         }
     }
 }
@@ -39,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     <!-- Success Message -->
     <?php
-        if($login){
+        if($login) {
             echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
             <strong>Success </strong> Logged in successfully.
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -49,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     <!-- Error Message -->
     <?php
-        if($invalid){
+        if($invalid) {
             echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
             <strong>Error </strong> Invalid credentials.
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>

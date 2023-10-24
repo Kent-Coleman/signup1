@@ -1,27 +1,27 @@
 <?php
-$success=0;
-$user=0;
+$success = 0;
+$user = 0;
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     include 'connect.php';
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    $sql="SELECT * FROM `registration` WHERE username='$username'";
+    $sql = "SELECT * FROM `registration` WHERE username = '$username'";
 
-    $result=mysqli_query($con,$sql);
-    if($result){
-        $num=mysqli_num_rows($result);
-        if($num>0){
+    $result = mysqli_query($con, $sql);
+    if ($result) {
+        $num = mysqli_num_rows($result);
+        if ($num > 0) {
             // echo "User already exist";
-            $user=1;
-        }else{
+            $user = 1;
+        } else {
             $sql = "INSERT INTO registration (username, password) VALUES ('$username', '$password')";
             $result = mysqli_query($con, $sql);
                 if ($result) {
                         // echo 'Signup successful';
-                        $success=1;
-                        header('location:login.php');
+                        $success = 1;
+                        header('location: login.php');
                     } else {
                         die(mysqli_error($con));
                     }
@@ -44,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     <!-- Success Message -->
     <?php
-        if($success){
+        if ($success) {
             echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
             <strong>Success </strong> You are successfully signed up.
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -54,7 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     <!-- Error Message -->
     <?php
-        if($user){
+        if ($user) {
             echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
             <strong>Holy guacamole!</strong> User already exists.
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
